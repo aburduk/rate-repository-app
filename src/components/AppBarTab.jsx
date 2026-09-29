@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet } from 'react-native';
+import { useNavigate } from 'react-router-native';
 import Text from './Text';
 import theme from '../theme';
 
@@ -17,11 +18,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function AppBarTab({ children, onPress }) {
+export default function AppBarTab({ children, to }) {
+  const navigate = useNavigate();
+
   return (
     <Pressable
       accessibilityRole="button"
-      onPress={onPress}
+      onPress={() => navigate(to)}
       style={({ pressed }) => [styles.tab, pressed && styles.pressed]}
     >
       <Text fontSize="subheading" fontWeight="bold" style={styles.text}>
