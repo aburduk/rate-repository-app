@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 16,
     justifyContent: 'center',
+    borderBottomWidth: 2,
+    borderBottomColor: theme.colors.accent,
   },
   pressed: {
     opacity: 0.7,
